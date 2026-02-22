@@ -1,0 +1,40 @@
+@font-face {
+    font-display: swap; 
+    font-family: 'noto-sans-regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/noto-sans-v42-latin-regular.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'noto-sans-medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/noto-sans-v42-latin-500.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'noto-sans-bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/noto-sans-v42-latin-700.woff2') format('woff2'); 
+}
+
+
+$neutral-900-color: #091540;
+$neutral-800-color: #202535;
+$neutral-700-color: #2F364B;
+$neutral-600-color: #535868;
+$neutral-300-color: #C6C6C6;
+$neutral-200-color: #D6E2F5;
+$neutral-100-color: #EEEEEE;
+$neutral-0-color: #FBFDFE;
+
+$red-400-color: #F25C54;
+$red-500-color: #DE4840;
+$red-700-color: #C7231A;
+
+$light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEFBF9 100%);
+$dark-gradient: linear-gradient(180deg, #04091B 0%, #091540 100%);
