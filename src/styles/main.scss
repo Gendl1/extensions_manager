@@ -54,6 +54,13 @@ html {
     &__title {
         display: flex;
         justify-content: space-between;
+        gap: 40px;
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
 
         &-text {
             @include mixins.text-preset-1;
@@ -84,8 +91,32 @@ html {
         "JSONWizard TabMasterPro ViewportBuddy"
         "MarkupNotes GridGuides PalettePicker"
         "LinkChecker DOMSnapshot ConsolePlus";
-        grid-template-columns: repeat(3,auto);
-        grid-template-rows: repeat(4,auto);
+
+        @media (max-width: 800px) {
+            grid-template-areas: 
+            "DevLens StyleSpy"
+            "SpeedBoost JSONWizard"
+            "TabMasterPro ViewportBuddy"
+            "MarkupNotes GridGuides"
+            "PalettePicker LinkChecker"
+            "DOMSnapshot ConsolePlus";
+        }
+
+        @media (max-width: 550px) {
+            grid-template-areas: 
+            "DevLens"
+            "StyleSpy"
+            "SpeedBoost"
+            "JSONWizard"
+            "TabMasterPro"
+            "ViewportBuddy"
+            "MarkupNotes"
+            "GridGuides"
+            "PalettePicker"
+            "LinkChecker"
+            "DOMSnapshot"
+            "ConsolePlus";
+        }
 
         &-item {
             display: flex;
@@ -97,6 +128,14 @@ html {
             box-sizing: border-box;
             background-color: $neutral-0-color;
             border-radius: 20px;
+
+            @media (max-width: 800px) {
+                max-width: 346px;
+            }
+
+            @media (max-width: 550px) {
+                max-width: 343px;
+            }
 
             &-info {
                 display: flex;
@@ -134,6 +173,7 @@ html {
                     border-radius: 30px;
                     @include mixins.text-preset-6;
                     color: $neutral-900-color;
+                    cursor: pointer;
                 }
 
                 &-switch {
@@ -146,12 +186,23 @@ html {
                     background-color: $neutral-300-color;
                     border-radius: 20px;
                     padding: 2px;
+                    cursor: pointer;
+
+                    &.enable {
+                        background-color: $red-700-color;
+                    }
+
+                    &.enable .hero__grid-item-interact-switch-ball {
+                        transform: translateX(15px);
+                    }           
 
                     &-ball {
                         background-color: $neutral-0-color;
                         width: 16px;
                         height: 16px;
                         border-radius: 30px;
+                        transition: transform 0.2s cubic-bezier(.19,.74,.83,.67);
+                        transform: translateX(0);
                     }
                 }
                 
@@ -162,48 +213,120 @@ html {
 
 .devlens-item {
     grid-area: DevLens;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .stylespy-item {
     grid-area: StyleSpy;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .speedboost-item {
     grid-area: SpeedBoost;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .jsonwizard-item {
     grid-area: JSONWizard;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .tabmasterpro-item {
     grid-area: TabMasterPro;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .viewportbuddy-item {
     grid-area: ViewportBuddy;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .markupnotes-item {
     grid-area: MarkupNotes;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .gridguides-item {
     grid-area: GridGuides;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .palettepicker-item {
     grid-area: PalettePicker;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .linkchecker-item {
     grid-area: LinkChecker;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .domsnapshot-item {
     grid-area: DOMSnapshot;
+
+    @media (max-width: 800px) {
+        justify-self: end;
+    }
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
 
 .consoleplus-item {
     grid-area: ConsolePlus;
+
+    @media (max-width: 550px) {
+        justify-self: center;
+    }
 }
