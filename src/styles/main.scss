@@ -2,9 +2,55 @@
 @use 'variables' as *;
 @use 'mixins' as mixins;
 
+@use 'hero';
+@use 'header';
+
+:root {
+    --bg-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEFBF9 100%);
+    --header-container: #FBFDFE;
+    --logo-text:#091540;
+    --theme-bg:#EEEEEE;
+    --hero-title-text:#091540;
+    --hero-filter-button:#FBFDFE;
+    --hero-filter-button-text:#091540;
+    --hero-grid-item:#FBFDFE;
+    --grid-item-name:#091540;
+    --grid-item-desc:#535868;
+    --remove-btn:#FBFDFE;
+    --remove-btn-text: #091540;
+    --remove-btn-hover:#C7231A;
+    --remove-btn-text-hover:#FBFDFE;
+    --switch-disabled:#C6C6C6;
+    --switch-enabled: #C7231A;
+    --hero-filter-button-active:#C7231A;
+    --hero-filter-button-active-text:#FBFDFE;
+    --theme-hover:#C6C6C6;
+}
+
+.dark {
+    --bg-gradient: linear-gradient(180deg, #04091B 0%, #091540 100%);
+    --header-container: #202535;
+    --logo-text: #fff;
+    --theme-bg:#2F364B;
+    --hero-title-text:#FBFDFE;
+    --hero-filter-button:#2F364B;
+    --hero-filter-button-text:#FBFDFE;
+    --hero-grid-item:#202535;
+    --grid-item-name: #FBFDFE;
+    --grid-item-desc:#C6C6C6;
+    --remove-btn: #202535;
+    --remove-btn-text: #FBFDFE;
+    --remove-btn-hover: #F25C54;
+    --remove-btn-text-hover:#091540;
+    --switch-disabled: #535868;
+    --switch-enabled: #F25C54;
+    --hero-filter-button-active: #F25C54;
+    --hero-filter-button-active-text: #091540;
+    --theme-hover:#535868;
+}
 
 html {
-    background: $light-gradient;
+    background: var(--bg-gradient);
     background-repeat: no-repeat; 
     background-size: cover;       
     background-attachment: fixed;
@@ -17,316 +63,16 @@ html {
     padding-right: 16px;
 }
 
-.header {
-    &-container {
-        padding-top: 40px;
-        padding-bottom: 64px;
-    }
 
-    &__logo {
-        display: flex;
-        justify-content: space-between;
-        background-color: $neutral-0-color;
-        padding: 12px 16px;
-        border-radius: 20px;
-        max-width: 1170px;
-        max-height: 74px;
-        box-sizing: border-box;
+$neutral-900-color: #091540;
+$neutral-800-color: #202535;
+$neutral-700-color: #2F364B;
+$neutral-600-color: #535868;
+$neutral-300-color: #C6C6C6;
+$neutral-200-color: #D6E2F5;
+$neutral-100-color: #EEEEEE;
+$neutral-0-color: #FBFDFE;
 
-        &-img {
-            display: flex;
-            align-items: center;
-        }
-
-        &-theme {
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-.hero {
-
-    &-container {
-        padding-bottom: 40px;
-    }
-
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-
-        @media (max-width: 550px) {
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-        }
-
-        &-text {
-            @include mixins.text-preset-1;
-            color: $neutral-900-color;
-        }
-
-        &-filter {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            &-button {
-                padding: 8px 20px 10px 20px;
-                background-color: $neutral-0-color;
-                color: $neutral-900-color;
-                @include mixins.text-preset-3;
-                border-radius: 30px;
-            }
-        }
-    }
-
-    &__grid {
-        margin-top: 32px;
-        display: grid;
-        gap: 12px;
-        grid-template-areas: 
-        "DevLens StyleSpy SpeedBoost"
-        "JSONWizard TabMasterPro ViewportBuddy"
-        "MarkupNotes GridGuides PalettePicker"
-        "LinkChecker DOMSnapshot ConsolePlus";
-
-        @media (max-width: 800px) {
-            grid-template-areas: 
-            "DevLens StyleSpy"
-            "SpeedBoost JSONWizard"
-            "TabMasterPro ViewportBuddy"
-            "MarkupNotes GridGuides"
-            "PalettePicker LinkChecker"
-            "DOMSnapshot ConsolePlus";
-        }
-
-        @media (max-width: 550px) {
-            grid-template-areas: 
-            "DevLens"
-            "StyleSpy"
-            "SpeedBoost"
-            "JSONWizard"
-            "TabMasterPro"
-            "ViewportBuddy"
-            "MarkupNotes"
-            "GridGuides"
-            "PalettePicker"
-            "LinkChecker"
-            "DOMSnapshot"
-            "ConsolePlus";
-        }
-
-        &-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px;
-            max-width: 382px;
-            min-height: 200px;
-            box-sizing: border-box;
-            background-color: $neutral-0-color;
-            border-radius: 20px;
-
-            @media (max-width: 800px) {
-                max-width: 346px;
-            }
-
-            @media (max-width: 550px) {
-                max-width: 343px;
-            }
-
-            &-info {
-                display: flex;
-                gap: 16px;
-
-                &-img {
-                    width: 60px;
-                    height: 60px;
-                }
-
-                &-text {
-
-                    &-name {
-                        @include mixins.text-preset-2;
-                        color: $neutral-900-color;
-                    }
-
-                    &-desc {
-                        @include mixins.text-preset-5;
-                        color: $neutral-600-color;
-                        margin-top: 8px;
-                    }
-                }
-            }
-
-            &-interact {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                &-button {
-                    padding: 8px 16px;
-                    background-color: $neutral-0-color;
-                    border: 1px solid $neutral-300-color;
-                    border-radius: 30px;
-                    @include mixins.text-preset-6;
-                    color: $neutral-900-color;
-                    cursor: pointer;
-                }
-
-                &-switch {
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    width: 36px;
-                    height: 20px;
-                    box-sizing: border-box;
-                    background-color: $neutral-300-color;
-                    border-radius: 20px;
-                    padding: 2px;
-                    cursor: pointer;
-
-                    &.enable {
-                        background-color: $red-700-color;
-                    }
-
-                    &.enable .hero__grid-item-interact-switch-ball {
-                        transform: translateX(15px);
-                    }           
-
-                    &-ball {
-                        background-color: $neutral-0-color;
-                        width: 16px;
-                        height: 16px;
-                        border-radius: 30px;
-                        transition: transform 0.2s cubic-bezier(.19,.74,.83,.67);
-                        transform: translateX(0);
-                    }
-                }
-                
-            }
-        }
-    }
-}
-
-.devlens-item {
-    grid-area: DevLens;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.stylespy-item {
-    grid-area: StyleSpy;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.speedboost-item {
-    grid-area: SpeedBoost;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.jsonwizard-item {
-    grid-area: JSONWizard;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.tabmasterpro-item {
-    grid-area: TabMasterPro;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.viewportbuddy-item {
-    grid-area: ViewportBuddy;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.markupnotes-item {
-    grid-area: MarkupNotes;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.gridguides-item {
-    grid-area: GridGuides;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.palettepicker-item {
-    grid-area: PalettePicker;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.linkchecker-item {
-    grid-area: LinkChecker;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.domsnapshot-item {
-    grid-area: DOMSnapshot;
-
-    @media (max-width: 800px) {
-        justify-self: end;
-    }
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
-
-.consoleplus-item {
-    grid-area: ConsolePlus;
-
-    @media (max-width: 550px) {
-        justify-self: center;
-    }
-}
+$red-400-color: #F25C54;
+$red-500-color: #DE4840;
+$red-700-color: #C7231A;

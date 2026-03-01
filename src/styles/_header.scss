@@ -1,0 +1,55 @@
+@use 'variables' as *;
+@use 'mixins' as mixins;
+
+.header {
+    padding-top: 40px;
+    padding-bottom: 64px;
+
+    &-container {
+        border-radius: 20px;
+        padding: 12px 16px;
+        background-color: var(--header-container);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        text-decoration: none;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border-radius: 20px;
+        max-width: 1170px;
+        max-height: 74px;
+        box-sizing: border-box;
+
+        &-img {
+            display: flex;
+            align-items: center;
+        }
+        
+        &-text {
+            @include mixins.logo-text;
+            color: var(--logo-text);
+        }
+
+    }
+
+    &__theme {
+        background-color: var(--theme-bg);
+        justify-self: center;
+        height: 50px;
+        width: 50px;
+        padding: 0;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: var(--theme-hover);
+        }
+    }
+    
+}

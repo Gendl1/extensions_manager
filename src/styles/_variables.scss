@@ -3,7 +3,7 @@
     font-family: 'noto-sans-regular';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/noto-sans-v42-latin-regular.woff2') format('woff2'); 
+    src: url('/src/assets/fonts/noto-sans-v42-latin-regular.woff2') format('woff2'); 
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-family: 'noto-sans-medium';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/noto-sans-v42-latin-500.woff2') format('woff2'); 
+    src: url('/src/assets/fonts/noto-sans-v42-latin-500.woff2') format('woff2'); 
 }
 
 @font-face {
@@ -19,7 +19,16 @@
     font-family: 'noto-sans-bold';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/noto-sans-v42-latin-700.woff2') format('woff2'); 
+    src: url('/src/assets/fonts/noto-sans-v42-latin-700.woff2') format('woff2'); 
+}
+
+
+@font-face {
+    font-display: swap; 
+    font-family: 'geologica';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/src/assets/fonts/geologica-v5-latin-regular.woff2') format('woff2'); 
 }
 
 
